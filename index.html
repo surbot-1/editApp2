@@ -9,7 +9,7 @@
 <body>
     <p> Welcome to editApp FamilyDay </p> <br>
     
-    <input type="text" placeholder="Username" id="usernameField">
+    <input type="password" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField">
     <button onclick = "gotoLogin()"> Login </button> <br> <br>
     
@@ -84,11 +84,11 @@
                   alert('Alert 1'); 
                   getLoginInfo();
               if (username == 'user' && password == '123') {
-                  chat = "1"; 
+                  chat = true; 
                   alert('Welcome!'); 
                   }
               else { 
-                  chat = "0"; 
+                  chat = false; 
                   alert('Wrong Username and Password!');
                    }
                 }
@@ -101,7 +101,7 @@
             
    // if(chat == "1") {
        
-       function sendMessage() {  if(chat == "1") {
+       function sendMessage() {  if(chat) {
             getMessage();
             firebase.database().ref("editApp").set({
             a_Name: name, 
