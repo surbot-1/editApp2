@@ -84,6 +84,7 @@
                   else { Chat = false; alert('Wrong Username and Password !'); }
                }
     */     
+   while(chat) {
        function sendMessage() {  // if (Chat == true) {
             getMessage();
             firebase.database().ref("editApp").set({
@@ -120,10 +121,11 @@
                });
               }
         
-    /*   function newline() {
+      /*   function newline() {
               document.querySelector('#root').innerHTML += '<br>' ;
                }
-    */
+      */
+   }  
            
       /*    
       function sendMessage2() {
