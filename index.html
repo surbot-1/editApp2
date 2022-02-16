@@ -77,12 +77,14 @@
         var message ;  // = document.getElementById("messageField").value ;
         var boolean chat = false;
 
-      function gotoLogin() {
+      function gotoLogin() { alert('Alert 1');
               getLoginInfo();
            if (username == "user" && password == "123") {
-                  chat = true; alert('Login'); }
-                  else { chat = false; alert('Wrong Username and Password !'); }
-               }
+                  chat = true; alert('Login'); 
+                   }
+                  else { chat = false; alert('Wrong Username and Password !');
+                   }
+                }
                
       function getLoginInfo() {
               username = document.getElementById("usernameField").value ;
