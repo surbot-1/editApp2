@@ -33,8 +33,8 @@
     <br><br> -->
      
 
-    
-    <div id="root"></div>
+    <div> <p id="root2"></p> </div>
+    <div id="root" ></div>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
 
@@ -76,7 +76,7 @@
         var name ;     // = document.getElementById("nameField").value ;
         var message ;  // = document.getElementById("messageField").value ;
        // var chat = false ;
-      alert('Alert2');
+     // alert('Alert2');
 /*      function gotoLogin() {  alert('Alert3');
             //  getLoginInfo();
          //  if ((username == "user") && (password == "123")) {
@@ -121,9 +121,9 @@
                  
        function takeSnapshot() { 
                var ref = firebase.database().ref("editApp"); 
-               ref.on("value", function(snapshot) { // newline();
+               ref.on("value", function(snapshot) {
                snapshot.forEach(function(element) {
-               document.querySelector('#root').innerHTML +=`
+               document.querySelector('#root2').innerHTML +=`
                <div>${element.val()}<\div>
                ` 
                 }); 
