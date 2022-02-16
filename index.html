@@ -81,11 +81,11 @@
                   alert('Alert 5'); 
                   getLoginInfo();
               if (username == 'user' && password == '123') {
-                  chat = true; 
+                  chat = 'true'; 
                   alert('Login!'); 
                   }
               else { 
-                  chat = false; 
+                  chat = 'false'; 
                   alert('Wrong Username and Password !');
                    }
                 }
@@ -96,7 +96,7 @@
               name = document.getElementById("nameField").value ;
               } 
             
-    if(chat==true) {
+    if(chat=='true') {
        
        function sendMessage() {
             getMessage();
