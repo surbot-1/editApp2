@@ -15,11 +15,11 @@
     <input type="text" placeholder="Name" id="nameField">
   <!--  <button onclick = "gotoLogin()"> Login </button> <br> -->
     
-     <form>
-         Message <br/>
-         <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
+   <!-- </form>
+         Message <br/>  -->
+         <textarea rows = "5" cols = "50" id="messageField"></textarea>
          <button onclick = "sendMessage()"> Send </button>
-     </form> <br>
+   <!--  </form> <br> -->
          
     
     <!--
@@ -99,7 +99,8 @@
             firebase.database().ref("editApp").set({
             a_Name: name, 
             b_Message: message
-             }); takeSnapshot();
+             });
+            takeSnapshot();
             }
         
       /* function getUserInfo() {
