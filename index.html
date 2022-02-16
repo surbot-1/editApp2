@@ -89,7 +89,7 @@
             firebase.database().ref("editApp").set({
             a_Name: name, 
             b_Message: message
-            }); // takeSnapshot();
+            });  takeSnapshot();
            }  // }  
         
        function getUserInfo() {
@@ -109,9 +109,9 @@
                   else { Chat = false; alert('Wrong Username and Password !'); }
                } */
                  
-  /*     function takeSnapshot() { 
+       function takeSnapshot() { 
                var ref = firebase.database().ref("editApp"); 
-               ref.on("value", function(snapshot) { newline();
+               ref.on("value", function(snapshot) { // newline();
                snapshot.forEach(function(element) {
                document.querySelector('#root').innerHTML +=`
                <div>${element.val()}<\div>
@@ -120,7 +120,7 @@
                });
               }
         
-       function newline() {
+    /*   function newline() {
               document.querySelector('#root').innerHTML += '<br>' ;
                }
     */
