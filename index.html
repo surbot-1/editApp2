@@ -77,21 +77,28 @@
         var message ;  // = document.getElementById("messageField").value ;
         var Chat = false;
 
-   /*    function gotoLogin() {
-              getUserInfo();
+      function gotoLogin() {
+              getLoginInfo();
            if (username == "user" && password == "123") {
                   Chat = true; lert('Login'); }
                   else { Chat = false; alert('Wrong Username and Password !'); }
                }
-    */     
+               
+       function getLoginInfo() {
+              username = document.getElementById("usernameField").value ;
+              password = document.getElementById("passwordField").value ;
+              name = document.getElementById("nameField").value ;
+              }
+    
    while(chat) {
-       function sendMessage() {  // if (Chat == true) {
+       
+       function sendMessage() {
             getMessage();
             firebase.database().ref("editApp").set({
             a_Name: name, 
             b_Message: message
-            });  takeSnapshot();
-           }  // }  
+             });  takeSnapshot();
+            }
         
        function getUserInfo() {
               username = document.getElementById("usernameField").value ;
@@ -124,7 +131,7 @@
       /*   function newline() {
               document.querySelector('#root').innerHTML += '<br>' ;
                }
-      */
+             */
    }  
            
       /*    
