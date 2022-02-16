@@ -9,7 +9,7 @@
 <body>
     <p> Welcome to editApp FamilyDay </p> <br>
     
-    <input type="text" placeholder="Username" id="userNameField">
+    <input type="text" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField">
     <button onclick = "gotoLogin()"> Login </button> <br> <br>
     <input type="text" placeholder="Name" id="nameField"> <br>
@@ -78,24 +78,24 @@
         var chat = false ;
      
      function gotoLogin() { 
-                 alert('Alert4');
+                 alert('Alert5');
                  getLoginInfo();
-              // if ((username == 'user') && (password == '123')) {
-                 // chat = true; 
-                 alert('Login!'); 
-                  // }
-              // else { 
-                 // chat = false; 
+              if ((username == 'user') && (password == '123')) {
+                  chat = true; 
+                  alert('Login!'); 
+                  }
+              else { 
+                  chat = false; 
                   alert('Wrong Username and Password !');
-                   // }
-                // }
-               
+                   }
+                }
+                
       function getLoginInfo() {
               username = document.getElementById("usernameField").value ;
               password = document.getElementById("passwordField").value ;
-            //  name = document.getElementById("nameField").value ;
+              name = document.getElementById("nameField").value ;
               } 
-            }
+            
   //  while(false) {
        
        function sendMessage() {
