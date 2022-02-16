@@ -96,7 +96,7 @@
               name = document.getElementById("nameField").value ;
               } 
             
-  while(true) {
+    if(true) {
        
        function sendMessage() {
             getMessage();
@@ -124,7 +124,7 @@
                   else { chat = false; alert('Wrong Username and Password !'); }
                } */
         
-               takeSnapshot();
+              // takeSnapshot();
        function takeSnapshot() { 
                var ref = firebase.database().ref("editApp"); 
                ref.once("value", function(snapshot) {
@@ -140,7 +140,7 @@
               document.querySelector('#root').innerHTML += '<br>' ;
                }
              */
-  }  
+    }  
            
       /*    
       function sendMessage2() {
