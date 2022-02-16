@@ -78,14 +78,14 @@
         var chat ;
      
      function gotoLogin() { 
-                  alert('Alert 5'); 
+                  alert('Alert 6'); 
                   getLoginInfo();
               if (username == 'user' && password == '123') {
-                  chat = 'true'; 
+                  chat = "1"; 
                   alert('Login!'); 
                   }
               else { 
-                  chat = 'false'; 
+                  chat = "0"; 
                   alert('Wrong Username and Password !');
                    }
                 }
@@ -96,7 +96,7 @@
               name = document.getElementById("nameField").value ;
               } 
             
-    if(chat=='true') {
+    if(chat == "1") {
        
        function sendMessage() {
             getMessage();
@@ -138,9 +138,11 @@
         
       /*   function newline() {
               document.querySelector('#root').innerHTML += '<br>' ;
-               }
-             */
-    }  
+               }  */
+             
+  } else {
+        alert('Please Resister first'); 
+         }
            
       /*    
       function sendMessage2() {
