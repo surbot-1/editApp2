@@ -78,15 +78,15 @@
         var chat ;
      
      function gotoLogin() { 
-                  alert('Alert 6'); 
+                  alert('Alert 7'); 
                   getLoginInfo();
               if (username == 'user' && password == '123') {
                   chat = "1"; 
-                  alert('Login!'); 
+                  alert('Welcome!'); 
                   }
               else { 
                   chat = "0"; 
-                  alert('Wrong Username and Password !');
+                  alert('Wrong Username and Password!');
                    }
                 }
                 
@@ -96,16 +96,16 @@
               name = document.getElementById("nameField").value ;
               } 
             
-    if(chat == "1") {
+   // if(chat == "1") {
        
-       function sendMessage() {
+       function sendMessage() {  if(chat == "1") {
             getMessage();
             firebase.database().ref("editApp").set({
             a_Name: name, 
             b_Message: message
              });
             takeSnapshot();
-            }
+            }  }
         
       /* function getUserInfo() {
               username = document.getElementById("usernameField").value ;
@@ -140,9 +140,9 @@
               document.querySelector('#root').innerHTML += '<br>' ;
                }  */
              
-  } else {
-        alert('Please Resister first'); 
-         }
+  // } else {
+       // alert('Please Resister first'); 
+          //}
            
       /*    
       function sendMessage2() {
