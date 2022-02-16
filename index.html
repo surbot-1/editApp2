@@ -11,8 +11,9 @@
     
     <input type="text" placeholder="Username" id="userNameField">
     <input type="password" placeholder="Password" id="passwordField">
-    <input type="text" placeholder="Name" id="nameField">
     <button onclick = "gotoLogin()"> Login </button> <br>
+    <input type="text" placeholder="Name" id="nameField">
+    // <button onclick = "gotoLogin()"> Login </button> <br>
     
      <form>
          Message<br>
@@ -76,20 +77,20 @@
         var message ;  // = document.getElementById("messageField").value ;
         var Chat = false;
 
-       function gotoLogin() {
+   /*    function gotoLogin() {
               getUserInfo();
            if (username == "user" && password == "123") {
                   Chat = true; /* beginChat(); */ alert('Login'); }
                   else { Chat = false; alert('Wrong Username and Password !'); }
                }
-           
-       function sendMessage() { if (Chat == true) {
+    */     
+       function sendMessage() {  // if (Chat == true) {
             getMessage();
             firebase.database().ref("editApp").set({
             a_Name: name, 
             b_Message: message
-            }); takeSnapshot();
-           } }  
+            }); // takeSnapshot();
+           }  // }  
         
        function getUserInfo() {
               username = document.getElementById("usernameField").value ;
@@ -108,7 +109,7 @@
                   else { Chat = false; alert('Wrong Username and Password !'); }
                } */
                  
-       function takeSnapshot() { 
+  /*     function takeSnapshot() { 
                var ref = firebase.database().ref("editApp"); 
                ref.on("value", function(snapshot) { newline();
                snapshot.forEach(function(element) {
@@ -122,7 +123,7 @@
        function newline() {
               document.querySelector('#root').innerHTML += '<br>' ;
                }
-       
+    */
            
       /*    
       function sendMessage2() {
