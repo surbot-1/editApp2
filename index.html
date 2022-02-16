@@ -77,7 +77,7 @@
         var message ;  // = document.getElementById("messageField").value ;
         var chat = false ;
      
-/*      function gotoLogin() {  alert('Alert3');
+     function gotoLogin() {  alert('Alert3');
                  getLoginInfo();
             if ((username == "user") && (password == "123")) {
                  chat = true; alert('Login'); 
@@ -119,7 +119,8 @@
                   chat = true;  beginChat(); alert('Login'); }
                   else { chat = false; alert('Wrong Username and Password !'); }
                } */
-                 
+        
+               takeSnapshot();
        function takeSnapshot() { 
                var ref = firebase.database().ref("editApp"); 
                ref.once("value", function(snapshot) {
