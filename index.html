@@ -75,13 +75,13 @@
         var password ; // = document.getElementById("passwordField").value ;
         var name ;     // = document.getElementById("nameField").value ;
         var message ;  // = document.getElementById("messageField").value ;
-        var Chat = false;
+        var chat = false;
 
       function gotoLogin() {
               getLoginInfo();
            if (username == "user" && password == "123") {
-                  Chat = true; lert('Login'); }
-                  else { Chat = false; alert('Wrong Username and Password !'); }
+                  chat = true; alert('Login'); }
+                  else { chat = false; alert('Wrong Username and Password !'); }
                }
                
        function getLoginInfo() {
@@ -113,8 +113,8 @@
         
       /* function checkUsernamePassword() {
               if (username == "user" && password == "123") {
-                  Chat = true;  beginChat(); alert('Login'); }
-                  else { Chat = false; alert('Wrong Username and Password !'); }
+                  chat = true;  beginChat(); alert('Login'); }
+                  else { chat = false; alert('Wrong Username and Password !'); }
                } */
                  
        function takeSnapshot() { 
