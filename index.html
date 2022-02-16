@@ -13,8 +13,9 @@
     <input type="password" placeholder="Password" id="passwordField">
     <button onclick = "gotoLogin()"> Login </button> <br> <br>
     
-     Name :
+    <form> Name :
     <input type="text" placeholder="Name" id="nameField"> <br>
+    </form>
     <form>
     <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
     <button onclick = "sendMessage()"> Send </button>
@@ -80,7 +81,7 @@
         var chat ;
      
      function gotoLogin() { 
-                  alert('Alert 7'); 
+                  alert('Alert 8'); 
                   getLoginInfo();
               if (username == 'user' && password == '123') {
                   chat = "1"; 
