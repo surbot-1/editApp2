@@ -99,14 +99,14 @@
             firebase.database().ref("editApp").set({
             a_Name: name, 
             b_Message: message
-             });  takeSnapshot();
+             }); takeSnapshot();
             }
         
-       function getUserInfo() {
+      /* function getUserInfo() {
               username = document.getElementById("usernameField").value ;
               password = document.getElementById("passwordField").value ;
               name = document.getElementById("nameField").value ;
-              }
+              } */
         
        function getMessage() {
               name = document.getElementById("nameField").value ;
