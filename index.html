@@ -87,12 +87,13 @@
         var message ;  // = document.getElementById("messageField").value ;
         var login = false;
         var signup = false;
-        var phone = "12345";
+        var phone ;
+        var aName, bPhone, cUsername, dPassword ;
      
      function gotoLogin() { 
                  getLoginInfo();
-              if (username == 'user' && password == '123') {
-                  
+                 getEditAppUserInfo();
+             if (username == cUsername && password == dPassword) {
                   login = true; 
                   // alert('Welcome!'); 
                   document.querySelector('#div2').innerHTML = "";
@@ -105,30 +106,41 @@
                   login = false; 
                   // alert('Wrong Username and Password!');
                   document.querySelector('#div2p1').innerHTML = "Wrong Username and Password !";
-                   }
-         
-       function getLoginInfo() {
-              username = document.getElementById("usernameField").value ;
-              password = document.getElementById("passwordField").value ;
-              name = document.getElementById("nameField").value ;
-              } 
-             }   
+                  }
+             function getLoginInfo() {
+                  username = document.getElementById("usernameField").value ;
+                  password = document.getElementById("passwordField").value ;
+                  name = document.getElementById("nameField").value ;
+                  phone = document.getElementById("phoneField").value ;
+                  } 
+             function getEditAppUserInfo() {
+                 var aRef = firebase.database().ref("editAppUserInfo");
+                 aRef.once("value", function(snapshot) {
+                 var aName = snapshot.child("a_Name").val();
+                 var bPhone = snapshot.child("b_Phone").val();
+                 var cUsername = snapshot.child("c_Username").val();
+                 var dPassword = snapshot.child("d_Password").val();
+                  } 
+                }   
       
-       function gotoSignup() {
+      function gotoSignup() {
               getSignupInfo();
-              firebase.database().ref("editApp").set({
+              firebase.database().ref("editAppUserInfo").set({
               a_Name: name, 
-              b_Message: message
+              b_Phone: phone, 
+              c_Username: username, 
+              d_Password: password
               });
-       function getSignupInfo() {
+           document.querySelector('#div2p1').innerHTML = "Signup done" ;
+           function getSignupInfo() {
               name = document.getElementById("nameField").value ;
               phone = document.getElementById("phoneField").value ;
               username = document.getElementById("usernameField").value ;
               password = document.getElementById("passwordField").value ;
+               }
              }
-   
        
-       function sendMessage() {  if(login) {
+      function sendMessage() {  if(login) {
             getMessage();
             firebase.database().ref("editApp").set({
             a_Name: name, 
