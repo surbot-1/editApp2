@@ -78,15 +78,16 @@
         var password ; // = document.getElementById("passwordField").value ;
         var name ;     // = document.getElementById("nameField").value ;
         var message ;  // = document.getElementById("messageField").value ;
-        var chat ;
+        var chat = false;
      
      function gotoLogin() { 
-                  alert('Alert 1'); 
-                  getLoginInfo();
+                 getLoginInfo();
               if (username == 'user' && password == '123') {
                   chat = true; 
                   alert('Welcome!'); 
+                  takeSnapshot();
                   }
+                  
               else { 
                   chat = false; 
                   alert('Wrong Username and Password!');
@@ -99,7 +100,7 @@
               name = document.getElementById("nameField").value ;
               } 
             
-   // if(chat == "1") {
+   
        
        function sendMessage() {  if(chat) {
             getMessage();
@@ -107,7 +108,7 @@
             a_Name: name, 
             b_Message: message
              });
-            takeSnapshot();
+            //takeSnapshot();
             }  }
         
       /* function getUserInfo() {
@@ -130,7 +131,7 @@
               // takeSnapshot();
        function takeSnapshot() { 
                var ref = firebase.database().ref("editApp"); 
-               ref.once("value", function(snapshot) {
+               ref.on("value", function(snapshot) {
                snapshot.forEach(function(element) {
                document.querySelector('#root2').innerHTML +=`
                <div>${element.val()}<\div>
