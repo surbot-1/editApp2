@@ -15,14 +15,14 @@
     <input type="password" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField">
     <button onclick = "gotoLogin()"> Login </button> <br>
-    <input type="text" placeholder="Name" id="nameField">
-    <input type="number" placeholder="Phone" id="phonedField">
+   <!-- <input type="text" placeholder="Name" id="nameField">
+    <input type="number" placeholder="Phone" id="phonedField">  -->
     <button onclick = "gotoSignup()"> Signup </button>
     <p id="div2p1"></p>
     </div>
     
     <div id="div3">
-   <!-- Name <input type="text" placeholder="Name" id="nameField"> -->
+     Name <input type="text" placeholder="Name" id="nameField">
     Clear message <button onclick = "messageClear()"> Clear </button> <br>
     <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
     <button onclick = "sendMessage()"> Send </button>
@@ -110,34 +110,35 @@
              function getLoginInfo() {
                   username = document.getElementById("usernameField").value ;
                   password = document.getElementById("passwordField").value ;
-                  name = document.getElementById("nameField").value ;
-                  phone = document.getElementById("phoneField").value ;
+                  // name = document.getElementById("nameField").value ;
+                  // phone = document.getElementById("phoneField").value ;
                   } 
              function getEditAppUserInfo() {
                  var aRef = firebase.database().ref("editAppUserInfo");
                  aRef.once("value", function(snapshot) {
-                 var aName = snapshot.child("a_Name").val();
-                 var bPhone = snapshot.child("b_Phone").val();
-                 var cUsername = snapshot.child("c_Username").val();
-                 var dPassword = snapshot.child("d_Password").val();
+                 // aName = snapshot.child("a_Name").val();
+                 // bPhone = snapshot.child("b_Phone").val();
+                 cUsername = snapshot.child("c_Username").val();
+                 dPassword = snapshot.child("d_Password").val();
                   } 
                 }   
       
       function gotoSignup() {
               getSignupInfo();
               firebase.database().ref("editAppUserInfo").set({
-              a_Name: name, 
-              b_Phone: phone, 
+              // a_Name: name, 
+              // b_Phone: phone, 
               c_Username: username, 
               d_Password: password
               });
-           document.querySelector('#div2p1').innerHTML = "Signup done" ;
+           
            function getSignupInfo() {
               name = document.getElementById("nameField").value ;
               phone = document.getElementById("phoneField").value ;
               username = document.getElementById("usernameField").value ;
               password = document.getElementById("passwordField").value ;
                }
+              document.querySelector('#div2p1').innerHTML = "Signup done" ; 
              }
        
       function sendMessage() {  if(login) {
