@@ -92,7 +92,7 @@
      
      function gotoLogin() { 
                  getLoginInfo();
-                // getEditAppUserInfo();
+                 getEditAppUserInfo2();
              if (username == 'user' && password == '123') {
                   chat = true; 
                   // alert('Welcome!'); 
@@ -107,21 +107,22 @@
                   // alert('Wrong Username and Password!');
                   document.querySelector('#div2p1').innerHTML = "Wrong Username and Password !";
                   }
-             function getLoginInfo() {
+              function getLoginInfo() {
                   username = document.getElementById("usernameField").value ;
                   password = document.getElementById("passwordField").value ;
                   // name = document.getElementById("nameField").value ;
                   // phone = document.getElementById("phoneField").value ;
                   } 
-           /*  function getEditAppUserInfo() {
+               function getEditAppUserInfo2() {
                  var aRef = firebase.database().ref("editAppUserInfo");
                  aRef.once("value", function(snapshot) {
                  // aName = snapshot.child("a_Name").val();
                  // bPhone = snapshot.child("b_Phone").val();
                  cUsername = snapshot.child("c_Username").val();
                  dPassword = snapshot.child("d_Password").val();
-                  }); */
-                }   
+                  });
+                 }  
+                }
       
       function gotoSignup() {
               getSignupInfo();
