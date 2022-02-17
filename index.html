@@ -14,12 +14,15 @@
     <div id="div2">
     <input type="password" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField">
-    <button onclick = "gotoLogin()"> Login </button>
+    <button onclick = "gotoLogin()"> Login </button> <br>
+    <input type="text" placeholder="Name" id="nameField">
+    <input type="number" placeholder="Phone" id="phonedField">
+    <button onclick = "gotoSignup()"> Signup </button>
     <p id="div2p1"></p>
     </div>
     
     <div id="div3">
-    Name <input type="text" placeholder="Name" id="nameField">
+   <!-- Name <input type="text" placeholder="Name" id="nameField"> -->
     Clear message <button onclick = "messageClear()"> Clear </button> <br>
     <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
     <button onclick = "sendMessage()"> Send </button>
@@ -82,13 +85,15 @@
         var password ; // = document.getElementById("passwordField").value ;
         var name ;     // = document.getElementById("nameField").value ;
         var message ;  // = document.getElementById("messageField").value ;
-        var chat = false;
+        var login = false;
+        var signup = false;
+        var phone = "12345";
      
      function gotoLogin() { 
                  getLoginInfo();
               if (username == 'user' && password == '123') {
                   
-                  chat = true; 
+                  login = true; 
                   // alert('Welcome!'); 
                   document.querySelector('#div2').innerHTML = "";
                   document.querySelector('#div2').innerHTML += "You are Logedin. Start chat";
@@ -97,21 +102,33 @@
                   }
                   
               else { 
-                  chat = false; 
+                  login = false; 
                   // alert('Wrong Username and Password!');
                   document.querySelector('#div2p1').innerHTML = "Wrong Username and Password !";
                    }
-                }
-                
-      function getLoginInfo() {
+         
+       function getLoginInfo() {
               username = document.getElementById("usernameField").value ;
               password = document.getElementById("passwordField").value ;
               name = document.getElementById("nameField").value ;
               } 
-            
+             }   
+      
+       function gotoSignup() {
+              getSignupInfo();
+              firebase.database().ref("editApp").set({
+              a_Name: name, 
+              b_Message: message
+              });
+       function getSignupInfo() {
+              name = document.getElementById("nameField").value ;
+              phone = document.getElementById("phoneField").value ;
+              username = document.getElementById("usernameField").value ;
+              password = document.getElementById("passwordField").value ;
+             }
    
        
-       function sendMessage() {  if(chat) {
+       function sendMessage() {  if(login) {
             getMessage();
             firebase.database().ref("editApp").set({
             a_Name: name, 
