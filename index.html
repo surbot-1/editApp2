@@ -132,14 +132,25 @@
               d_Password: password
               });
            
-           function getSignupInfo() {
+       function getSignupInfo() {
               // name = document.getElementById("nameField").value ;
               // phone = document.getElementById("phoneField").value ;
               username = document.getElementById("usernameField").value ;
               password = document.getElementById("passwordField").value ;
                }
-              document.querySelector('#div2p1').innerHTML = "Signup done" ; 
-             }
+              function getEditAppUserInfo() {
+                 var aRef = firebase.database().ref("editAppUserInfo");
+                 aRef.once("value", function(snapshot) {
+                 // aName = snapshot.child("a_Name").val();
+                 // bPhone = snapshot.child("b_Phone").val();
+                 cUsername = snapshot.child("c_Username").val();
+                 dPassword = snapshot.child("d_Password").val();
+                  } 
+                  document.querySelector('#div2p1').innerHTML = "" ;
+                  document.querySelector('#div2p1').innerHTML += "Signup done" ;
+                  document.querySelector('#div2p1').innerHTML += '<br>' + "Username:" + cUsername ;
+                  document.querySelector('#div2p1').innerHTML += '<br>' + "Password:" + dPassword ;
+                }
        
       function sendMessage() {  if(chat) {
             getMessage();
