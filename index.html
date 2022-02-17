@@ -120,11 +120,12 @@
                  // bPhone = snapshot.child("b_Phone").val();
                  cUsername = snapshot.child("c_Username").val();
                  dPassword = snapshot.child("d_Password").val();
-                  } */
+                  }); */
                 }   
       
       function gotoSignup() {
               getSignupInfo();
+              getEditAppUserInfo();
               firebase.database().ref("editAppUserInfo").set({
               // a_Name: name, 
               // b_Phone: phone, 
@@ -145,7 +146,8 @@
                  // bPhone = snapshot.child("b_Phone").val();
                  cUsername = snapshot.child("c_Username").val();
                  dPassword = snapshot.child("d_Password").val();
-                  } 
+                   });
+                  }
                   document.querySelector('#div2p1').innerHTML = "" ;
                   document.querySelector('#div2p1').innerHTML += "Signup done" ;
                   document.querySelector('#div2p1').innerHTML += '<br>' + "Username:" + cUsername ;
