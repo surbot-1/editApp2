@@ -13,15 +13,15 @@
     <div id="div2">
     <input type="password" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField">
-    <button onclick = "gotoLogin()"> Login </button> <br>
+    <button onclick = "gotoLogin()"> Login </button>
     </div> <br>
     <div id="div3">
     Name
     <input type="text" placeholder="Name" id="nameField">
-    <button onclick = "messageClear()"> Clear </button> <br>
+    Clear message <button onclick = "messageClear()"> Clear </button> <br>
     <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
-    <button onclick = "sendMessage()"> Send </button> <br>
-    </div>
+    <button onclick = "sendMessage()"> Send </button>
+    </div> <br>
     
      
      
@@ -89,7 +89,7 @@
                   chat = true; 
                   // alert('Welcome!'); 
                   document.querySelector('#div2').innerHTML = "";
-                  document.querySelector('#div2').innerHTML += "You are Logedin. Start chat" + '<br>';
+                  document.querySelector('#div2').innerHTML += "You are Logedin. Start chat";
                   
                   takeSnapshot();
                   }
@@ -97,7 +97,7 @@
               else { 
                   chat = false; 
                   // alert('Wrong Username and Password!');
-                  document.querySelector('#div2').innerHTML += "Wrong Username and Password !";
+                  document.querySelector('#div2').innerHTML += '<br>'+"Wrong Username and Password !";
                    }
                 }
                 
