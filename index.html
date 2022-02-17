@@ -142,7 +142,7 @@
                var ref = firebase.database().ref("editApp"); 
                ref.on("value", function(snapshot) { newline();
                snapshot.forEach(function(element) {
-               document.querySelector('#root2').innerHTML +=`
+               document.querySelector('#root').innerHTML +=`
                <div>${element.val()}<\div>
                ` 
                 }); 
@@ -150,10 +150,10 @@
               }
         
         function newline() {
-               document.querySelector('#root2').innerHTML += '<br>' ;
+               document.querySelector('#root').innerHTML += '<br>' ;
                }  
         function messageClear() {
-               document.querySelector('#root2').innerHTML = "";
+               document.querySelector('#root').innerHTML = "";
                }
  
 
