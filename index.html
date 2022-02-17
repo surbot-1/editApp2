@@ -85,7 +85,7 @@
         var password ; // = document.getElementById("passwordField").value ;
         var name ;     // = document.getElementById("nameField").value ;
         var message ;  // = document.getElementById("messageField").value ;
-        var userLogin = false;
+        var chat = false;
         var userSignup = false;
         var phone ;
         var aName, bPhone, cUsername, dPassword ;
@@ -94,7 +94,7 @@
                  getLoginInfo();
                  getEditAppUserInfo();
              if (username == 'user' && password == '123') {
-                  userLogin = true; 
+                  chat = true; 
                   // alert('Welcome!'); 
                   document.querySelector('#div2').innerHTML = "";
                   document.querySelector('#div2').innerHTML += "You are Logedin. Start chat";
@@ -103,7 +103,7 @@
                   }
                   
               else { 
-                  userLogin = false; 
+                  chat = false; 
                   // alert('Wrong Username and Password!');
                   document.querySelector('#div2p1').innerHTML = "Wrong Username and Password !";
                   }
@@ -141,7 +141,7 @@
               document.querySelector('#div2p1').innerHTML = "Signup done" ; 
              }
        
-      function sendMessage() {  if(userLogin) {
+      function sendMessage() {  if(chat) {
             getMessage();
             firebase.database().ref("editApp").set({
             a_Name: name, 
