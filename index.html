@@ -90,12 +90,14 @@
                   // alert('Welcome!'); 
                   document.querySelector('#div2').innerHTML = "";
                   document.querySelector('#div2').innerHTML += "You are Logedin. Start chat" + '<br>';
+                  
                   takeSnapshot();
                   }
                   
               else { 
                   chat = false; 
-                  alert('Wrong Username and Password!');
+                  // alert('Wrong Username and Password!');
+                  document.querySelector('#div2').innerHTML += '<br>' + "Wrong Username and Password !";
                    }
                 }
                 
