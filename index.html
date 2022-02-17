@@ -7,20 +7,22 @@
     <title>My Firebase Tutorial</title>
 </head>
 <body>
+    <div id="div1">
     <p> Welcome to editApp FamilyDay </p> <br>
-    
+    </div>
+    <div id="div2">
     <input type="password" placeholder="Username" id="usernameField">
     <input type="password" placeholder="Password" id="passwordField">
     <button onclick = "gotoLogin()"> Login </button> <br> <br>
-    
+    </div>
+    <div id="div3">
     Name
     <input type="text" placeholder="Name" id="nameField"> <br>
     
-    
     <textarea rows = "5" cols = "50" placeholder="Message" id="messageField"></textarea>
-    <button onclick = "sendMessage()"> Send </button>
-    <br>
-       
+    <button onclick = "sendMessage()"> Send </button> <br>
+    </div>
+    
      
      
          
@@ -83,8 +85,10 @@
      function gotoLogin() { 
                  getLoginInfo();
               if (username == 'user' && password == '123') {
+                  
                   chat = true; 
                   alert('Welcome!'); 
+                  document.querySelector('#div2').innerHTML = "";
                   takeSnapshot();
                   }
                   
