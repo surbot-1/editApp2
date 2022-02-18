@@ -110,7 +110,7 @@
                   document.querySelector('#div2p1').innerHTML = "";
                   document.querySelector('#div2p1').innerHTML += "Wrong Username and Password !";
                    } 
-                  } , 5000 );
+                  } , 2000 );
                 }
               function getLoginInfo() {
                   username = document.getElementById("usernameField").value ;
@@ -138,14 +138,16 @@
               c_Username: username, 
               d_Password: password
               });
-           
-       function getSignupInfo() {
+              document.querySelector('#div2p1').innerHTML = "Please wait..." ;
+              setTimeout(wait1, 15000);
+             }
+          function getSignupInfo() {
               // name = document.getElementById("nameField").value ;
               // phone = document.getElementById("phoneField").value ;
               username = document.getElementById("usernameField").value ;
               password = document.getElementById("passwordField").value ;
                }
-              function getEditAppUserInfo() {
+           function getEditAppUserInfo() {
                  var aRef = firebase.database().ref("editAppUserInfo");
                  aRef.once("value", function(snapshot) {
                  // aName = snapshot.child("a_Name").val();
@@ -154,11 +156,12 @@
                  dPassword = snapshot.child("d_Password").val();
                    });
                   }
+           function Wait1 {
                   document.querySelector('#div2p1').innerHTML = "" ;
                   document.querySelector('#div2p1').innerHTML += "Signup done" ;
                   document.querySelector('#div2p1').innerHTML += '<br>' + "Username:" + cUsername ;
                   document.querySelector('#div2p1').innerHTML += '<br>' + "Password:" + dPassword ;
-                }
+                  }
        
       function sendMessage() {  if(chat) {
             getMessage();
