@@ -91,8 +91,10 @@
         var aName, bPhone, cUsername, dPassword ;
      
      function gotoLogin() { 
+             document.querySelector('#div2p1').innerHTML = "Please wait...";
                  getLoginInfo();
                  getEditAppUserInfo2();
+             setTimeout(function(){
              if (username == cUsername && password == dPassword) {
                   chat = true; 
                   // alert('Welcome!'); 
@@ -107,7 +109,9 @@
                   // alert('Wrong Username and Password!');
                   document.querySelector('#div2p1').innerHTML = "";
                   document.querySelector('#div2p1').innerHTML += "Wrong Username and Password !";
-                  } }
+                   } 
+                  } , 1000 );
+                }
               function getLoginInfo() {
                   username = document.getElementById("usernameField").value ;
                   password = document.getElementById("passwordField").value ;
@@ -123,7 +127,7 @@
                  dPassword = snapshot.child("d_Password").val();
                   });
                  }  
-               // }
+               
       
       function gotoSignup() {
               getSignupInfo();
